@@ -62,12 +62,22 @@ const cardData = [
 function cardMaker(cardData) {
     for (let i = 0; i < cardData.length; i++) {
         const card =  document.createElement("div");
-        const imgContainer =  document.createElement("div");
-        const cardBodyContainer =  document.createElement("div");
-        const cardTitle =  document.createElement("h3");
-        const cardDescription =  document.createElement("p");
-        const cardButton = document.createElement("button");
-
+        card.innerHTML = 
+        `<div class="card wrap" style="width: 16rem;"> 
+            <img src="${cardData[i].ImageUrl}" class="card-img-top" alt="..."> 
+            <div class="card-body text-left flex justify-content-between
+            align-items-center"> 
+            <h5 class="card-title">${cardData[i].Name}</h5>
+            <p class="card-text">${cardData[i].ShortDesc}</p> 
+            <a href="#" class="btn btn-primary">View</a> 
+            </div> 
+        </div>`;
+        mainCardContainer.appendChild(card);
+        
     }
-}
 
+}
+let result = cardMaker(cardData);
+
+
+console.log(result);
